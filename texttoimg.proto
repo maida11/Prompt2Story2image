@@ -1,0 +1,18 @@
+// proto/text2image.proto
+syntax = "proto3";
+
+package text2image;
+
+service Text2ImageService {
+  rpc GenerateImage (ImageRequest) returns (ImageResponse);
+}
+
+message ImageRequest {
+  string prompt = 1;
+}
+
+message ImageResponse {
+  string status = 1;
+  string message = 2;
+  string image_base64 = 3;
+}
